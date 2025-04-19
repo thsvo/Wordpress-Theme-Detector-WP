@@ -15,7 +15,7 @@ export async function detectWordPress(url: string) {
 
     return await response.json()
   } catch (error) {
-    console.error("Error detecting WordPress:", error)
+    
     throw error
   }
 }

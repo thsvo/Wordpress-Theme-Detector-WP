@@ -16,52 +16,52 @@ export default function Home() {
     if (canvasRef.current) {
       const scene = new THREE.Scene()
       const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
-      const renderer = new THREE.WebGLRenderer({ 
+      const renderer = new THREE.WebGLRenderer({
         canvas: canvasRef.current,
         alpha: true,
       })
-      
+
       renderer.setSize(window.innerWidth, window.innerHeight)
-      
+
       // Create particles
       const particlesGeometry = new THREE.BufferGeometry()
       const particlesCount = 2000
-      
+
       const posArray = new Float32Array(particlesCount * 3)
       for (let i = 0; i < particlesCount * 3; i++) {
         posArray[i] = (Math.random() - 0.5) * 5
       }
-      
+
       particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3))
-      
+
       const particlesMaterial = new THREE.PointsMaterial({
         size: 0.005,
         color: '#8a6eff',
       })
-      
+
       const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial)
       scene.add(particlesMesh)
-      
+
       camera.position.z = 2
-      
+
       // Animation
       const animate = () => {
         requestAnimationFrame(animate)
         particlesMesh.rotation.y += 0.001
         renderer.render(scene, camera)
       }
-      
+
       animate()
-      
+
       // Handle resize
       const handleResize = () => {
         camera.aspect = window.innerWidth / window.innerHeight
         camera.updateProjectionMatrix()
         renderer.setSize(window.innerWidth, window.innerHeight)
       }
-      
+
       window.addEventListener('resize', handleResize)
-      
+
       return () => {
         window.removeEventListener('resize', handleResize)
       }
@@ -72,14 +72,14 @@ export default function Home() {
     // GSAP animations
     if (cardsRef.current) {
       const cards = cardsRef.current.querySelectorAll('.feature-card')
-      
+
       gsap.fromTo(
         cards,
         { y: 100, opacity: 0 },
-        { 
-          y: 0, 
-          opacity: 1, 
-          stagger: 0.2, 
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.2,
           duration: 0.8,
           ease: "power3.out",
           scrollTrigger: {
@@ -97,8 +97,8 @@ export default function Home() {
       <header className="fixed top-0 left-0 right-0 z-10 bg-transparent backdrop-blur-sm py-4 px-6">
         <div className="container mx-auto flex items-center justify-between">
           <div className="flex items-center">
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className="flex items-center hover:opacity-90 transition-opacity"
               onClick={(e) => {
                 e.preventDefault();
@@ -128,7 +128,7 @@ export default function Home() {
             <div className="mb-8">
               <DetectorForm />
             </div>
-            
+
             {/* Feature cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16" ref={cardsRef}>
               <div className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow feature-card">
@@ -151,7 +151,7 @@ export default function Home() {
                   </svg>
                 </Link>
               </div>
-              
+
               <div className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
                 <div className="flex items-center mb-4">
                   {/* <img 
@@ -172,7 +172,7 @@ export default function Home() {
                   </svg>
                 </Link>
               </div>
-              
+
               <div className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
                 <div className="flex items-center mb-4">
                   {/* <img 
@@ -194,15 +194,15 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            
+
             {/* Hero section */}
             <div className="flex flex-col md:flex-row items-center justify-between gap-8 py-12 mt-8">
               <div className="md:w-1/2">
                 <h2 className="text-3xl font-medium mb-4">Make your WordPress detection fast on all devices</h2>
-                
+
                 <div className="space-y-4">
                   <h3 className="text-sm font-medium uppercase text-gray-500">CHECK OUT</h3>
-                  
+
                   {/* <ul className="space-y-2">
                     <li>
                       <a href="/" className="text-blue-600 hover:underline">What's new</a>
@@ -216,11 +216,13 @@ export default function Home() {
                   </ul> */}
                 </div>
               </div>
-              
+
               <div className="md:w-1/2">
-                <Image 
-                  src="42535.jpg" 
-                  alt="WordPress Detection Illustration" 
+                <Image
+                  src="42535.jpg"
+                  width={100}
+                  height={100}
+                  alt="WordPress Detection Illustration"
                   className="w-full"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
@@ -230,7 +232,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          
+
           {/* Footer */}
           <footer className="mt-20 pt-8 border-t border-gray-200">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
@@ -243,7 +245,7 @@ export default function Home() {
                   We reserve the right to modify or terminate the service for any reason, without notice at any time.
                 </p>
               </div>
-              
+
               <div>
                 <h3 className="font-medium mb-4">Privacy Policy</h3>
                 <p className="text-sm text-gray-600 mb-2">
@@ -253,7 +255,7 @@ export default function Home() {
                   We use cookies to enhance your experience. You can opt out of non-essential cookies at any time.
                 </p>
               </div>
-              
+
               <div>
                 <h3 className="font-medium mb-4">Data Usage</h3>
                 <p className="text-sm text-gray-600 mb-2">
@@ -264,14 +266,14 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            
+
             <div className="mt-12 pt-8 border-t border-gray-200">
               <div className="flex flex-col md:flex-row justify-between items-center">
                 {/* <div className="mb-4 md:mb-0">
                   <a href="/terms" className="text-gray-600 hover:text-gray-900 mr-4">Terms of Service</a>
                   <a href="/privacy" className="text-gray-600 hover:text-gray-900">Privacy Policy</a>
                 </div> */}
-                
+
                 <div className="flex space-x-6">
                   <a href="https://github.com/thsvo" className="text-gray-600 hover:text-gray-900">Github</a>
                   <a href="https://wa.me/+8801792577349" className="text-gray-600 hover:text-gray-900">WhatsApp</a>

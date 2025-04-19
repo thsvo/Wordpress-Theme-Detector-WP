@@ -190,7 +190,7 @@ export async function POST(request: Request) {
       theme,
     })
   } catch (error) {
-    console.error("Error checking WordPress:", error)
+    
     return NextResponse.json(
       {
         isWordPress: false,
