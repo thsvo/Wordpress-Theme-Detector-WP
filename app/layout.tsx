@@ -21,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <meta name="google-site-verification" content="IGnxBXXuJZnPo_xBhWnVoueev58n1O_EHmf0XGEdDv4" />
         <link rel="canonical" href="https://wordpressdetector.codeopx.com/" />
         <link rel="icon" href="/icon.svg" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-icon.png" />
