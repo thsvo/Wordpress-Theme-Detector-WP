@@ -5,6 +5,7 @@ import { DetectorForm } from "@/components/detector-form"
 import { gsap } from "gsap"
 import * as THREE from "three"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Home() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -217,7 +218,7 @@ export default function Home() {
               </div>
               
               <div className="md:w-1/2">
-                <img 
+                <Image 
                   src="42535.jpg" 
                   alt="WordPress Detection Illustration" 
                   className="w-full"

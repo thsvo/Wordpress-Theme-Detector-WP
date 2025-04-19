@@ -2,66 +2,15 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Toaster } from '@/components/ui/sonner'
 
-export const metadata: Metadata = {
-  title: 'WordPress Theme Detector | Identify WP Themes and Plugins',
-  description: 'Free WordPress theme and plugin detector tool. Instantly identify any WordPress theme, plugins, and technologies used on any WordPress website.',
-  keywords: 'wordpress detector, wp theme detector, wordpress theme finder, wordpress plugin detector, website analyzer, wordpress tools',
-  authors: [{ name: 'WordPress Detector Team' }],
-  creator: 'WordPress Detector',
-  publisher: 'WordPress Detector',
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-image-preview': 'large',
-      'max-video-preview': -1,
-      'max-snippet': -1,
-    },
-  },
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://wordpress-detector.com/',
-    title: 'WordPress Theme Detector | Identify WP Themes and Plugins',
-    description: 'Free WordPress theme and plugin detector tool. Instantly identify any WordPress theme, plugins, and technologies used on any WordPress website.',
-    siteName: 'WordPress Detector',
-    images: [
-      {
-        url: '/images/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'WordPress Detector Tool',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'WordPress Theme Detector | Identify WP Themes and Plugins',
-    description: 'Free WordPress theme and plugin detector tool. Instantly identify any WordPress theme, plugins, and technologies used on any WordPress website.',
-    images: ['/images/twitter-image.jpg'],
-    creator: '@wpdetector',
-  },
+export const metadata = {
+  title: 'WordPress Detector',
+  description: 'Detect WordPress sites, themes, and plugins',
+  metadataBase: new URL('https://wordpressdetector.codeopx.com/'), // Replace with your actual domain
   viewport: {
     width: 'device-width',
     initialScale: 1,
-    maximumScale: 5,
+    maximumScale: 1,
   },
-  verification: {
-    google: 'your-google-verification-code',
-    yandex: 'your-yandex-verification-code',
-    yahoo: 'your-yahoo-verification-code',
-    other: {
-      me: ['your-personal-site'],
-    },
-  },
-  category: 'Technology',
 }
 
 export default function RootLayout({
@@ -72,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="canonical" href="https://wordpress-detector.com/" />
+        <link rel="canonical" href="https://wordpressdetector.codeopx.com/" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-icon.png" />
         <link rel="manifest" href="/manifest.json" />
@@ -87,7 +36,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebApplication",
               "name": "WordPress Detector",
-              "url": "https://wordpress-detector.com",
+              "url": "https://wordpressdetector.codeopx.com",
               "description": "Free WordPress theme and plugin detector tool",
               "applicationCategory": "WebApplication",
               "operatingSystem": "All",

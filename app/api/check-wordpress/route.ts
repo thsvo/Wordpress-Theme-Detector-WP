@@ -157,7 +157,7 @@ export async function POST(request: Request) {
     }
 
     // Method 5: Detect specific popular plugins by their signatures
-    detectSpecificPlugins(html, root, plugins, foundPlugins, baseUrl)
+    detectSpecificPlugins(html, root, plugins, foundPlugins as Set<string>, baseUrl)
 
     // Detect theme
     let theme: { name: string; url: string } | null = null
