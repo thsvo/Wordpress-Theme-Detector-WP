@@ -3,7 +3,7 @@ import './globals.css'
 import { Toaster } from '@/components/ui/sonner'
 
 export const metadata = {
-  title: 'WordPress Detector',
+  title: 'WordPress Detector ! Wordpress Theme Detector! WP Theme and Plugin Detector ',
   description: 'Detect WordPress sites, themes, and plugins',
   metadataBase: new URL('https://wordpressdetector.codeopx.com/'), // Replace with your actual domain
   viewport: {
