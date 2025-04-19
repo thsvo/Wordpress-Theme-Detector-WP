@@ -220,8 +220,7 @@ export default function Home() {
               <div className="md:w-1/2">
                 <Image
                   src="42535.jpg"
-                  width={100}
-                  height={100}
+                
                   alt="WordPress Detection Illustration"
                   className="w-full"
                   onError={(e) => {
